@@ -1,10 +1,5 @@
-const Home = ()=>{
-    return (
-        <>
-            <div className="text-3xl font-bold underline">
-                Welcome to Full Stack Project Frontend
-            </div>
-        </>
-    )
+import {DarkModeButton} from "../components/DarkMode.jsx";
+const Home = () =>{
+  return <div> <h1>Home Page</h1><DarkModeButton/> </div>
 }
-export default Home
+export default  Home;
