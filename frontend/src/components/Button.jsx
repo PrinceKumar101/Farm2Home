@@ -2,12 +2,10 @@ import clsx from "clsx";
 import { Slot } from "@radix-ui/react-slot";
 const Button = ({
   value,
-  children,
   size = "default",
   variant = "default",
   onClick,
   className,
-  buttonText,
   asChild = false,
   ...props
 }) => {
@@ -38,9 +36,8 @@ const Button = ({
         }[variant]
       )}
       {...props}
-    >
-      {children || buttonText}
-    </Comp>
+    />
+      
   );
 };
 export default Button;

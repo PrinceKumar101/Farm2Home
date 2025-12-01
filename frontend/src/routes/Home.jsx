@@ -1,5 +1,9 @@
-import {DarkModeButton} from "../components/DarkMode.jsx";
-const Home = () =>{
-  return <div> <h1>Home Page</h1><DarkModeButton/> </div>
-}
-export default  Home;
+
+import Hero from "../components/Hero.jsx";
+const Home = () => {
+  return (
+    // Background with a subtle gradient from white to light green
+    <Hero />
+  );
+};
+export default Home;
