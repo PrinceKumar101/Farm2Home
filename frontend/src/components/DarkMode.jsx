@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setThemeVariable } from "../store/slices/theme";
 import Button from "./Button";
+import { Sun, Moon } from "lucide-react";
 
 const DarkModeWrapper = ({ ...rest }) => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const DarkModeWrapper = ({ ...rest }) => {
 
   return (
     <div
-      className={`bg-background text-foreground min-h-screen ${
+      className={`bg-background text-foreground min-h-screen  ${
         darkMode ? "dark" : "light"
       }`}
       {...rest}
@@ -28,13 +29,30 @@ const DarkModeWrapper = ({ ...rest }) => {
   );
 };
 
+// export const DarkModeButton = () => {
+//   const dispatch = useDispatch();
+//   const darkMode = useSelector((state) => state.theme.darkMode);
+
+//   return (
+//     <Button onClick={() => dispatch(setThemeVariable(!darkMode))}>
+//       {darkMode ? "Light Mode" : "Dark Mode"}
+//     </Button>
+//   );
+// };
 export const DarkModeButton = () => {
   const dispatch = useDispatch();
   const darkMode = useSelector((state) => state.theme.darkMode);
 
   return (
-    <Button onClick={() => dispatch(setThemeVariable(!darkMode))}>
-      {darkMode ? "Light Mode" : "Dark Mode"}
+    <Button
+      onClick={() => dispatch(setThemeVariable(!darkMode))}
+      className={`
+        p-2 rounded-full
+        hover:bg-opacity-20 hover:scale-110
+        
+      `}
+    >
+      {darkMode ? <Sun size={20} /> : <Moon size={20} />}
     </Button>
   );
 };
